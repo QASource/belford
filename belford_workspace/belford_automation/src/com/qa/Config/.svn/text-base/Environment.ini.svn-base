@@ -1,0 +1,24 @@
+
+[Global]
+##########################################################################################
+# This section defines the Global variables used for the application. Following are the details for the different variables used
+# URL				This defines the application URL.
+##########################################################################################
+URL=http://saucelabs.com/
+
+[DriverConfig]
+##########################################################################################
+#Timeout		This defined the timout for the objects.
+#Delay		Defines the delay between the each operation
+#Interval		Defines the time to wait
+#URL_Load_Time	Defines the timeout for the URL Load.
+##########################################################################################
+TIMEOUT = 120
+DELAY = 10
+INTERVAL = 5
+URL_LOAD_TIME = 60
+FindDriverAttempts = 3
+str_SauceLabUser=qatorbert23
+str_SauceLabUserKey=4f6ac035-9cfc-40e5-8dcf-e0d7ec4546a9
+str_DevKey=4cdd06b5ad33bca00c4be49f8fe24100
+str_TCMSURL=http://192.16.17.49/qtms/lib/api/xmlrpc.php

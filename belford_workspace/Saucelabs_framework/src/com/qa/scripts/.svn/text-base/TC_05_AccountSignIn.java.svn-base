@@ -1,0 +1,34 @@
+///////////////////Script Info //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Script Name:												AccountSignIn
+//TestCase Summary: 										Verify that existing user is able to sign in application.
+//What the script does/TestCase Description:				Following is what Scripts does
+//															1. Calls the Reusable action signin with the username and password in TestData.ini file
+//															2. After the reusable action it make sure that deals list page is displayed on sign in.
+//What script(s) should be run before this script:			N/A <br>
+//What script(s) should be run after this script:			N/A <br>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.qa.scripts;
+
+import org.testng.annotations.*;
+import org.testng.Assert;
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class TC_05_AccountSignIn extends SetupScript {
+	//This is the test cases to ensure that the user is able to signin
+	@Test(description="TC_05_Verify that existing user is able to sign in application.", groups="SmokeTest")	
+		public void accountSignIn() throws Exception {
+	
+		//This sections calls the reusable action to signin application with the provided username and password
+		ReusableActions.accountSignIn(driver, CommonUtils.readIni("TestData.ini", "txt_SingInUserName"), CommonUtils.readIni("TestData.ini", "txt_SingInPassword"));
+		
+		//System is waiting for some time
+		CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "INTERVAL")));
+		
+		//System is ensuring whether the user got signed in or not
+		Assert.assertNotNull(UIEvents.isElementPresent(driver, CommonUtils.readIni("Repository.ini", "hd_DealsListPage")));
+		
+	}		
+		
+}

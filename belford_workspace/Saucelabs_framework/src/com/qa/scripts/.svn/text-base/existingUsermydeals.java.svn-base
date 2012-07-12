@@ -1,0 +1,32 @@
+package com.qa.scripts;
+import org.testng.annotations.Test;
+
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class existingUsermydeals extends SetupScript {
+	@Test(description="Verify that existing user is able to move into My Deals Page", groups="SmokeTest")	
+	public void mydealsitem() throws Exception
+
+	{
+     ReusableActions.accountSignIn(driver, CommonUtils.readIni("TestData.ini", "UserName"), CommonUtils.readIni("TestData.ini", "Password"));
+		
+   //Click 'Update' button on Refine page
+		ReusableActions.RefineFilter(driver, CommonUtils.readIni("TestData.ini", "CITY"), CommonUtils.readIni("TestData.ini", "CATEGORY"));
+     
+	//System is waiting for seconds specified
+     CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "DELAY")));
+    System.out.println("Validated that your are login into Deals list page");
+    // click on My Deals button
+    UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "mydeal_btn"));
+	
+	 // Validation that user is now moved to My Deals page
+    UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "mydeal_valid"));
+	
+	System.out.println("Validated that your are login into My Deals page"); 
+	CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "DELAY")));
+	
+	}
+	
+}

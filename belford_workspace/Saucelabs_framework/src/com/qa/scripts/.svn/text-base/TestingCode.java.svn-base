@@ -1,0 +1,65 @@
+///////////////////Script Info //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Script Name:												AccountSignIn
+//TestCase Summary: 										Verify that existing user is able to sign in application.
+//What the script does/TestCase Description:				Following is what Scripts does
+//															1. Calls the Reusable action signin with the username and password in TestData.ini file
+//															2. After the reusable action it make sure that deals list page is displayed on sign in.
+//What script(s) should be run before this script:			N/A <br>
+//What script(s) should be run after this script:			N/A <br>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.qa.scripts;
+
+/**
+ * Google2.java
+ * Open Google webpage and search for "Selenium 2".
+ * @Author: Xuan Ngo
+ */
+import java.io.File;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverBackedSelenium;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import com.qa.Functions.common.CommonUtils;
+import com.thoughtworks.selenium.Selenium;
+
+
+public class TestingCode
+{
+  public static void main(String[] args)
+  {
+	final String sUrl = "https://m.mblspndemo.com/register/";
+	WebDriver driver;
+	  
+  	String str_FirefoxProfilePath =System.getProperty("user.dir")+"\\WapProfile";
+	File FirefoxTempate= new File(str_FirefoxProfilePath);	
+
+	FirefoxProfile profile =new	FirefoxProfile(FirefoxTempate);
+	driver = new FirefoxDriver(profile);
+	
+	driver.get(sUrl);
+    Selenium selenium = new WebDriverBackedSelenium(driver,sUrl);
+	
+	for (int second = 0;second <= 60; second++) 
+		{
+			try 
+			{ 
+				if (selenium.isVisible("id=id_market"))
+					break;
+			} 
+			catch (Exception e) {}
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch (Exception e) {}
+		}
+	selenium.select("id=id_market", CommonUtils.readIni("TestData.ini", "CITY"));
+	
+/*		List<WebElement> allOptions = oSearchInputElem.findElements(By.tagName("option"));
+	    for (WebElement option : allOptions) {
+	        if(option.getText().equalsIgnoreCase("Boston, MA"))
+	        	option.setSelected();
+	    }*/
+    
+  }
+}

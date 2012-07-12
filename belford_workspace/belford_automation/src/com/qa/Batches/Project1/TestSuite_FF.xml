@@ -1,0 +1,24 @@
+<suite name="Firefox Automation Suite" verbose="10">
+   	 <parameter name="browser" value="Firefox" />
+   	<listeners > 
+   	  <listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+   	</listeners> 
+    <test name="TC_01_Verify that buyer is able to login to QAonDemand" preserve-order="true">
+     <classes>
+	     <class name="com.qa.scripts.Project1.BelLogin">
+	       <methods>
+			<include name="test_BelLogin"/>
+	       </methods>
+	     </class>
+	   </classes>
+  	</test>
+  	<test name="TC_02_Verify that buyer is successfully able to logout from QAonDemand" preserve-order="true">
+     <classes>
+	     <class name="com.qa.scripts.Project1.BelLogout">
+	       <methods>
+			<include name="test_BelLogout"/>
+	       </methods>
+	     </class>
+	   </classes>
+  	</test>
+</suite>

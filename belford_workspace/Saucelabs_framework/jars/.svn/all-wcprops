@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/torbert/!svn/ver/416/MobileClient/jars
+END
+testng.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/torbert/!svn/ver/416/MobileClient/jars/testng.jar
+END
+velocity-dep-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/torbert/!svn/ver/416/MobileClient/jars/velocity-dep-1.4.jar
+END
+ini4j-0.5.1-jdk14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/torbert/!svn/ver/416/MobileClient/jars/ini4j-0.5.1-jdk14.jar
+END
+reportng-1.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/torbert/!svn/ver/416/MobileClient/jars/reportng-1.1.2.jar
+END
+selenium-server-standalone-2.0a7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/torbert/!svn/ver/416/MobileClient/jars/selenium-server-standalone-2.0a7.jar
+END

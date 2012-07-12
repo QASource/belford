@@ -1,0 +1,43 @@
+///////////////////Script Info //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Script Name:												UpdateProfile
+//TestCase Summary: 										Verify that existing user is able to update the profile for existing account.
+//What the script does/TestCase Description:				Following is what Scripts does
+//															1. Calls the Reusable action signin with the username and password in TestData.ini file
+//															2. Navigates to Accounts page of the account.
+//															3. Calls the reusable action to update profile of the account.
+//															2. After the reusable action it make sure that account profile got updated.
+//What script(s) should be run before this script:			N/A <br>
+//What script(s) should be run after this script:			N/A <br>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.qa.scripts;
+
+import org.testng.annotations.*;
+import org.testng.Assert;
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class TC_16_UpdateProfile extends SetupScript {
+	//This is the test cases to ensure that the user is able to signin
+	@Test(description="TC_06_Verify that existing user is able to update the profile for existing account.", groups="SmokeTest")	
+		public void updateProfile() throws Exception {
+		
+		//This sections calls the reusable action to signin application with the provided username and password
+		ReusableActions.accountSignIn(driver, CommonUtils.readIni("TestData.ini", "txt_SingInUserName"), CommonUtils.readIni("TestData.ini", "txt_SingInPassword"));
+
+		//System clicks on the My deals button.
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_MyDeals"));
+
+		//System clicks on the My Account button.
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_MyAccount"));
+	
+		//System calls reusable action to update profile.
+		ReusableActions.updateProfile(driver, CommonUtils.readIni("TestData.ini", "UpdateProfileCity"), CommonUtils.readIni("TestData.ini", "UpdateProfileZip"), CommonUtils.readIni("TestData.ini", "UpdateProfileCategory"), CommonUtils.readIni("TestData.ini", "UpdateProfileGender"));
+	
+		 CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "DELAY")));
+		//System is ensuring whether the user is able to get profile updated through accounts page.
+		Assert.assertNotNull(UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini", "profileUpdateMessage")));
+		
+	}		
+		
+}

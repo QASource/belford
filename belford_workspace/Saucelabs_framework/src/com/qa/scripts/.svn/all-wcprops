@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/torbert/!svn/ver/419/MobileClient/src/com/qa/scripts
+END
+TC_10_ForgetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_10_ForgetPassword.java
+END
+TC_06_AccountSignInWithoutCredentials.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_06_AccountSignInWithoutCredentials.java
+END
+TC_30_ConfirmPaymentWithoutCard.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_30_ConfirmPaymentWithoutCard.java
+END
+ConfirmUsedDeal.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/ConfirmUsedDeal.java
+END
+ExistingUserPendingDeals.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/ExistingUserPendingDeals.java
+END
+TC_32_SignUpHelp.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_32_SignUpHelp.java
+END
+TestingCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TestingCode.java
+END
+TC_36_DealNearByHomePage.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_36_DealNearByHomePage.java
+END
+TC_25_existingUserReadyToUseRedeem.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_25_existingUserReadyToUseRedeem.java
+END
+CurrentPassowrdBlank.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/CurrentPassowrdBlank.java
+END
+TC_31_AddCardWithoutCredentials.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_31_AddCardWithoutCredentials.java
+END
+TC_37_DealsNearByNeedLogin.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/torbert/!svn/ver/419/MobileClient/src/com/qa/scripts/TC_37_DealsNearByNeedLogin.java
+END
+TC_17_AddCard.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_17_AddCard.java
+END
+TC_07_AccountSignInwithoutUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_07_AccountSignInwithoutUser.java
+END
+TC_13_ResetPasswordMismatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_13_ResetPasswordMismatch.java
+END
+TC_01_AccountSignupwithoutCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_01_AccountSignupwithoutCity.java
+END
+TC_21_existingUserReadytouse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_21_existingUserReadytouse.java
+END
+TC_33_HomePageHelp.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_33_HomePageHelp.java
+END
+TC_19_SignInDealPurchaseConfirmMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_19_SignInDealPurchaseConfirmMessage.java
+END
+PurchaseWithSignup.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/PurchaseWithSignup.java
+END
+TC_11_ResetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_11_ResetPassword.java
+END
+TC_05_AccountSignIn.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_05_AccountSignIn.java
+END
+ConfirmVoucherUsedAmount.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/ConfirmVoucherUsedAmount.java
+END
+TC_02_AccountSignupwithInvalidPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_02_AccountSignupwithInvalidPassword.java
+END
+TC_16_UpdateProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_16_UpdateProfile.java
+END
+confirmVoucherUsedDeal.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/confirmVoucherUsedDeal.java
+END
+TC_12_CurrentPasswordWrongResetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_12_CurrentPasswordWrongResetPassword.java
+END
+TC_22_ExistingUserRedeemAlertMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_22_ExistingUserRedeemAlertMessage.java
+END
+TC_26_ConfirmVoucherUsedCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_26_ConfirmVoucherUsedCode.java
+END
+CurrentPasswordBlankResetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/CurrentPasswordBlankResetPassword.java
+END
+TC_14_NewPasswordBlankResetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_14_NewPasswordBlankResetPassword.java
+END
+TC_34_AddCardWithoutCardNumber.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_34_AddCardWithoutCardNumber.java
+END
+TC_18_SignInDealPurchase.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_18_SignInDealPurchase.java
+END
+TC_27_ConfirmVoucherUsedDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_27_ConfirmVoucherUsedDate.java
+END
+TC_08_AccountSignInWithoutPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_08_AccountSignInWithoutPassword.java
+END
+existingUsermydeals.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/existingUsermydeals.java
+END
+TC_15_ConfirmPasswordBlankResetPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_15_ConfirmPasswordBlankResetPassword.java
+END
+TC_28_RefineUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_28_RefineUpdate.java
+END
+TC_23_ExistingUserRedeemCancel.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_23_ExistingUserRedeemCancel.java
+END
+TC_04_AccountSignup.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_04_AccountSignup.java
+END
+TC_35_AddCardWithoutZipCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_35_AddCardWithoutZipCode.java
+END
+TC_20_KeepShopping.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_20_KeepShopping.java
+END
+TC_24_ExistingUserRedeemAlertClose.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_24_ExistingUserRedeemAlertClose.java
+END
+readytouse.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/readytouse.java
+END
+SetupScript.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/torbert/!svn/ver/419/MobileClient/src/com/qa/scripts/SetupScript.java
+END
+TC_09_AccountSignInwithInvalidPassword.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_09_AccountSignInwithInvalidPassword.java
+END
+TC_03_AccountSignupwithExistingEmail.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_03_AccountSignupwithExistingEmail.java
+END
+TC_29_RefineClose.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/torbert/!svn/ver/416/MobileClient/src/com/qa/scripts/TC_29_RefineClose.java
+END

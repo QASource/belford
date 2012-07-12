@@ -1,0 +1,338 @@
+<suite name="Torbert Smoke Test Execution" verbose="10">
+    <listeners > 
+      <listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+    </listeners>
+	<test name="TC_01_Verify that new user is unable to signup in application without specifing city." preserve-order="true">
+		<classes>
+		  <class name="com.qa.scripts.TC_01_AccountSignupwithoutCity">
+			<methods>
+				<include name="accountSignupwithoutCity"/>
+			</methods>
+		  </class>
+		</classes>
+    </test>
+	<test name="TC_02_Verify that new user is unable to signup in application by providing invalid password." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_02_AccountSignupwithInvalidPassword">
+				<methods>
+					<include name="accountSignupwithInvalidPassword"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_03_Verify that new user is unable to signup in application by providing some existing email address." preserve-order="true">
+		<classes>
+		  <class name="com.qa.scripts.TC_03_AccountSignupwithExistingEmail">
+			<methods>
+				<include name="accountSignupwithExistingEmail"/>
+			</methods>
+		  </class>
+		</classes>
+	</test>
+	<test name="TC_04_Verify that new user is able to sign up with application." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_04_AccountSignup">
+				<methods>
+					<include name="accountSignup"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_05_Verify that existing user is able to sign in application." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_05_AccountSignIn">
+				<methods>
+					<include name="accountSignIn"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_06_Verify that user is unable to sign in application without providing user credentials." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_06_AccountSignInWithoutCredentials">
+				<methods>
+					<include name="accountsigninwithoutcredent"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_07_Verify that user is unable to sign in application without providing email address." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_07_AccountSignInwithoutUser">
+				<methods>
+					<include name="accountsigninwithoutuser"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_08_Verify that existing user is not able to signed into the  application without password." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_08_AccountSignInWithoutPassword">
+				<methods>
+					<include name="accountsigninwithoutpass"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_09_Verify that user is not able to login into the application with invalid password." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_09_AccountSignInwithInvalidPassword">
+				<methods>
+					<include name="accountSignupinvalidpassword"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_10_Verify that user is able to access forget password functionality." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_10_ForgetPassword">
+				<methods>
+					<include name="forgetPassword"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_11_Verify that existing user is able to reset the password through Accounts page." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_11_ResetPassword">
+				<methods>
+					<include name="resetPassword"/>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="TC_12_Verify that user is not able to reset the password if current password is wrong" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_12_CurrentPasswordWrongResetPassword">
+				<methods>
+					<include name="resetPasswordcurrentwrong"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_13_Verify that user is not able to reset password if New Pasword and confirm password mismatch" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_13_ResetPasswordMismatch">
+				<methods>
+					<include name="PasswordMismatch"/>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	<test name="TC_14_Verify that validation message is displayed while resetting the password without providing the new password." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_14_NewPasswordBlankResetPassword">
+				<methods>
+					<include name="newPasswordBlank"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_15_Verify that validation message is displayed while resetting the password without providing new password as confirm password." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_15_ConfirmPasswordBlankResetPassword">
+				<methods>
+					<include name="confirmpasswordblank"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_16_Verify that existing user is able to update the profile for existing account." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_16_UpdateProfile">
+				<methods>
+					<include name="updateProfile"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_17_Verify that existing user is able to add a credit card to account." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_17_AddCard">
+				<methods>
+					<include name="addCard"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="TC_18_Verify that existing user is able to purchase Deal" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_18_SignInDealPurchase">
+				<methods>
+					<include name="Dealpurchase"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_19_Verify that confirmation message is displayed after Deal purchase" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_19_SignInDealPurchaseConfirmMessage">
+				<methods>
+					<include name="DealpurchaseMessage"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_20_Verify that user is able to Keep shopping after Deal Purchase" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_20_KeepShopping">
+				<methods>
+					<include name="keepShoppingAfterpurchase"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_21_Verify that after buying the Deals are move to Ready to Use section" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_21_existingUserReadytouse">
+				<methods>
+					<include name="readytouse"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_22_Verify that alert message is displayed before redeem the Deal" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_22_ExistingUserRedeemAlertMessage">
+				<methods>
+					<include name="redeemAlert"/>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="TC_23_Verify that user is able to cancel the Deal" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_23_ExistingUserRedeemCancel">
+				<methods>
+					<include name="redeemAlertcancel"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_24_Verfiy that user can close the Redeem alert message window by cross button" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_24_ExistingUserRedeemAlertClose">
+				<methods>
+					<include name="redeemAlertclose"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_25_Verify that user can Redeem the Deals which are ready to use" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_25_existingUserReadyToUseRedeem">
+				<methods>
+					<include name="readyuseRedeem"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_26_Verify that voucher code is generated after Redeem the Deal" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_26_ConfirmVoucherUsedCode">
+				<methods>
+					<include name="usedDealVoucher"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_27_Verify that after Deal Redeem Date-time is generated." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_27_ConfirmVoucherUsedDate">
+				<methods>
+					<include name="usedDealVoucherDate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_28_Verify that User is  able to update the refine with the city/Category" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_28_RefineUpdate">
+				<methods>
+					<include name="refine"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_29_Verify that User can close the Refine dialog box by cross button" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_29_RefineClose">
+				<methods>
+					<include name="refinecross"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_30_Verify that user is not able to do confirm Payment without adding a credit card." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_30_ConfirmPaymentWithoutCard">
+				<methods>
+					<include name="noCard"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_31_Verify that Validation message is displayed if user not providing the Card credentials." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_31_AddCardWithoutCredentials">
+				<methods>
+					<include name="withoutCredentials"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="TC_32_Verify that user is navigated to Help page by clicking 'Help' button." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_32_SignUpHelp">
+				<methods>
+					<include name="HelpSignUp"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="TC_33_Verify that user is navigated to Help page by clicking 'Help' button from Home page." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_33_HomePageHelp">
+				<methods>
+					<include name="HelpHome"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="TC_34_Verify that existing user is unable to add a credit card without providing Card Number." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_34_AddCardWithoutCardNumber">
+				<methods>
+					<include name="addCardWithoutNumber"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="TC_35_Verify that existing user is unable to add a credit card without providing Zip Code." preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_35_AddCardWithoutZipCode">
+				<methods>
+					<include name="addCardWithoutZipCode"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_36_Verify that user is able to see the Deals by visiting Deals NearBy Me button" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_36_DealNearByHomePage">
+				<methods>
+					<include name="DealsNearBy"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TC_37_Verify that user needs to login into the application after visiting the deals by 'NearByMe' button" preserve-order="true">
+		<classes>
+			<class name="com.qa.scripts.TC_37_DealsNearByNeedLogin">
+				<methods>
+					<include name="DealsNearNeedLogin"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

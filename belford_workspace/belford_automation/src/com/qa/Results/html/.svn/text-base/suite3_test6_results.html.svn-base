@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Torbert Smoke Test Execution Report - TC_03_Verify that user is able to change password of the account.</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>TC_03_Verify that user is able to change password of the account.</h1>
+<p>
+  Test duration: 656.964s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.qa.scripts.TestCase_03_ChangePassword</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="TC_03_Verify that user is able to change password of the account.">changePassword</span>
+      </td>
+  <td class="duration">
+    617.168s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.util.NoSuchElementException: Element with locator id=id_username not found</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              com.qa.Functions.webdriver.UIEvents.waitForElement(UIEvents.java:169)<br />
+              com.qa.Functions.webdriver.UIEvents.type(UIEvents.java:85)<br />
+              com.qa.ReusableActions.ReusableActions.AccountSignIn(ReusableActions.java:49)<br />
+              com.qa.scripts.TestCase_03_ChangePassword.changePassword(TestCase_03_ChangePassword.java:25)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:641)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:677)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:850)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1154)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:137)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:121)<br />
+              org.testng.TestRunner.runWorkers(TestRunner.java:1108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:737)<br />
+              org.testng.TestRunner.run(TestRunner.java:596)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:315)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:310)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:272)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:221)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1027)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1023)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:964)<br />
+              org.testng.TestNG.run(TestNG.java:896)<br />
+              org.testng.TestNG.privateMain(TestNG.java:1193)<br />
+              org.testng.TestNG.main(TestNG.java:1153)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  
+</body>
+</html>

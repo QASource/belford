@@ -1,0 +1,23 @@
+
+[Global]
+##########################################################################################
+# This section defines the Global variables used for the application. Following are the details for the different variables used
+# URL				This defines the application URL.
+##########################################################################################
+URL=https://m.mblspndemo.com/
+LogoutURL=https://m.mblspndemo.com/account/logout
+Build_Number=326
+
+[DriverConfig]
+##########################################################################################
+#Timeout		This defined the timout for the objects.
+#Delay		Defines the delay between the each operation
+#Interval		Defines the time to wait
+#URL_Load_Time	Defines the timeout for the URL Load.
+##########################################################################################
+TIMEOUT = 120
+DELAY = 10
+INTERVAL = 5
+URL_LOAD_TIME = 60
+FindDriverAttempts=3
+

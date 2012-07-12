@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Batches
+END
+TestSuite_FF.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Batches/TestSuite_FF.xml
+END
+TestSuite_IE.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Batches/TestSuite_IE.xml
+END
+TestSuite.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Batches/TestSuite.xml
+END

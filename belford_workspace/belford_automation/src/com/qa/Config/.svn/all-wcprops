@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Config
+END
+Environment.ini
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Config/Environment.ini
+END
+TestData.ini
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Config/TestData.ini
+END
+Repository.ini
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/torbert/!svn/ver/434/SauceLabDemo/src/com/qa/Config/Repository.ini
+END

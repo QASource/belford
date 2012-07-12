@@ -1,0 +1,22 @@
+package com.qa.scripts;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+
+public class TC_33_HomePageHelp extends SetupScript{
+	@Test(description="TC_33_Verify that user is navigated to Help page by clicking 'Help' button from Home page.", groups="SmokeTest")	
+	public void HelpHome() throws Exception {
+	
+	
+	//System is clicking on Help Link
+	UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "Help_home"));
+	
+	//System is ensuring whether the user got signed up or not
+	Assert.assertNotNull(CommonUtils.readIni("Repository.ini","HelpConfirmationMessage"));
+	
+}		
+
+}

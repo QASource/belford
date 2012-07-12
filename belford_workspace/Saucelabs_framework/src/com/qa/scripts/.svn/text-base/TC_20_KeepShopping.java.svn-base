@@ -1,0 +1,46 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//Following is what Scripts does-Existing user has credit card added
+//1)Sign In into the application
+//2)User will move to Deals List page and after that select any Deal
+//3)Now Buy that deal by click on Buy NOw button
+//4)User will go to Mobile spinach page and select card from drop down
+//5)Click on Confirm Payment
+//6)After that click on Keep shopping button
+//7)Confirm that user is navigate to the Deal List page
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+package com.qa.scripts;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class TC_20_KeepShopping extends SetupScript{
+	
+	@Test(description="TC_12_Verfiy that user is able to Keep shopping after Deal Purchase", groups="SmokeTest")	
+	public void keepShoppingAfterpurchase() throws Exception
+
+	{
+
+		ReusableActions.accountSignIn(driver, CommonUtils.readIni("TestData.ini", "txt_SingInUserName"), CommonUtils.readIni("TestData.ini", "txt_SingInPassword"));
+		
+		//System is waiting for seconds specified
+	    //click on the Deal
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "select_existuserreadydeal"));
+		
+		ReusableActions.buyDeal(driver);
+	    
+	    //click on Keep Shopping Button
+	    UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "keep_shopping"));
+	    
+	    //Ensure that user is moved to Deal List page
+	    Assert.assertNotNull(UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini", "keepshopping_vaild")));
+	}
+
+
+
+}

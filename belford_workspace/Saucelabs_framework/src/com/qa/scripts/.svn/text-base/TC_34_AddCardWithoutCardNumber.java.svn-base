@@ -1,0 +1,49 @@
+///////////////////Script Info //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Script Name:												AddCardWithoutCredentials
+//TestCase Summary: 										Verify that Validation message is displayed if user not providing the Card credentials.
+//What the script does/TestCase Description:				Following is what Scripts does
+//															1. Login into the application as an user.
+//															2. Go to the Payment Section
+//                                                          3. Click on the Add card option
+//                                                          4. AFter that click on the Create Credit card button and observe that Validation message is displayed
+//What script(s) should be run before this script:			N/A
+//What script(s) should be run after this script:			N/A
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.qa.scripts;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class TC_34_AddCardWithoutCardNumber extends SetupScript{
+	
+	@Test(description="TC_34_Verify that existing user is unable to add a credit card without providing Card Number.", groups="SmokeTest")	
+	public void addCardWithoutNumber() throws Exception
+
+	{
+
+		//This sections calls the reusable action to signin application with the provided username and password
+		ReusableActions.accountSignIn(driver, CommonUtils.readIni("TestData.ini","txt_SingInUserName"), CommonUtils.readIni("TestData.ini", "txt_SingInPassword"));
+	
+		//System clicks on the My deals button.
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_MyDeals"));
+	
+		//System clicks on the My Account button.
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_MyAccount"));
+		
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_Payment"));
+		
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_AddCard"));
+		
+		//System calls a reusable action to add card with the provided card details.
+		ReusableActions.addCard(driver,CommonUtils.readIni("TestData.ini", "CardHolderName") , "", CommonUtils.readIni("TestData.ini", "ExpiryMonth"), CommonUtils.readIni("TestData.ini", "ExpiryYear"), CommonUtils.readIni("TestData.ini", "BillingZip"));
+		    
+		Assert.assertNotNull(CommonUtils.readIni("Repository.ini", "creditCardRequired_validation"));
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.qa.scripts;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.qa.Functions.common.CommonUtils;
+import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
+public class TC_37_DealsNearByNeedLogin extends SetupScript
+{
+	@Test(description="TC_37_Verify that user needs to login into the application after visiting the deals by 'NearByMe' button", groups="SmokeTest")	
+	public void DealsNearNeedLogin() throws Exception {
+		
+		//System clicks on the My deals button.
+		UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_DealsNearBy"));
+		
+		//Click 'Update' button on Refine page
+		ReusableActions.RefineFilter(driver, CommonUtils.readIni("TestData.ini", "CITY"), CommonUtils.readIni("TestData.ini", "CATEGORY"));
+		ReusableActions.buyDealWithoutSignup(driver);
+		
+		Assert.assertNotNull(CommonUtils.readIni("Repository.ini", "SignUp_valid"));
+}		
+
+}

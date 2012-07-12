@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" skipfailedinvocationCounts="false" verbose="1" name="Failed suite [belford_automation]" junit="false" parallel="false" annotations="JDK">
+  <test name="com.qa.scripts.SauceWithSelenium1(failed)" junit="false" parallel="false" annotations="JDK">
+    <classes>
+      <class name="com.qa.scripts.SauceWithSelenium1">
+        <methods>
+          <include name="TestSelenium1"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Torbert Smoke Test Execution Report - Suites</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body style="margin-top: 0;">
+
+<div id="sidebarHeader">
+  <h2>Torbert Smoke Test Execution Report</h2>
+  <p>
+    <a href="overview.html" target="main">Overview</a>
+          </p>
+</div>
+<table id="suites">
+    <thead>
+    <tr>
+      <th class="header suite" onclick="toggleElement('tests-1', 'table-row-group'); toggle('toggle-1')">
+        <span id="toggle-1" class="toggle">&#x25bc;</span>Torbert Publisher Automation Suite Execution Report
+      </th>
+    </tr>
+  </thead>
+  <tbody id="tests-1" class="tests">
+          </tbody>
+    <thead>
+    <tr>
+      <th class="header suite" onclick="toggleElement('tests-2', 'table-row-group'); toggle('toggle-2')">
+        <span id="toggle-2" class="toggle">&#x25bc;</span>Firefox Automation Suite
+      </th>
+    </tr>
+  </thead>
+  <tbody id="tests-2" class="tests">
+            <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test1_results.html" target="main">TC_08_Verify that user is able to create Banner application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test2_results.html" target="main">TC_04_Verify that user is able to access FAQ Page.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test3_results.html" target="main">TC_011 Verify that user is able to generate reports.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test4_results.html" target="main">TC_02_Verify that existing user is able to signin into the application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test5_results.html" target="main">TC_09 Verify that existing user is able to setup Payment Info.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test6_results.html" target="main">TC_03_Verify that user is able to change password of the account.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test7_results.html" target="main">TC_10_Verify overlay content and make sure that links are reachable.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test8_results.html" target="main">TC_01_Verify that a new user is able to signup with the application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test9_results.html" target="main">TC_07_Verify that user is able to create RSS application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test10_results.html" target="main">TC_06_Verify that user is able to create REST API application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite2_test11_results.html" target="main">TC_05_Verify that user is able to update profile.</a>
+      </td>
+    </tr>
+      </tbody>
+    <thead>
+    <tr>
+      <th class="header suite" onclick="toggleElement('tests-3', 'table-row-group'); toggle('toggle-3')">
+        <span id="toggle-3" class="toggle">&#x25bc;</span>IE Automation Suite
+      </th>
+    </tr>
+  </thead>
+  <tbody id="tests-3" class="tests">
+            <tr>
+      <td class="test">
+                            <span class="skipIndicator" title="All executed tests passed but some tests were skipped.">&#x2714;</span>
+                          <a href="suite3_test1_results.html" target="main">TC_08_Verify that user is able to create Banner application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test2_results.html" target="main">TC_04_Verify that user is able to access FAQ Page.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                            <span class="skipIndicator" title="All executed tests passed but some tests were skipped.">&#x2714;</span>
+                          <a href="suite3_test3_results.html" target="main">TC_011 Verify that user is able to generate reports.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test4_results.html" target="main">TC_02_Verify that existing user is able to signin into the application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                            <span class="skipIndicator" title="All executed tests passed but some tests were skipped.">&#x2714;</span>
+                          <a href="suite3_test5_results.html" target="main">TC_09 Verify that existing user is able to setup Payment Info.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test6_results.html" target="main">TC_03_Verify that user is able to change password of the account.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                            <span class="skipIndicator" title="All executed tests passed but some tests were skipped.">&#x2714;</span>
+                          <a href="suite3_test7_results.html" target="main">TC_10_Verify overlay content and make sure that links are reachable.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test8_results.html" target="main">TC_01_Verify that a new user is able to signup with the application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test9_results.html" target="main">TC_07_Verify that user is able to create RSS application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test10_results.html" target="main">TC_06_Verify that user is able to create REST API application.</a>
+      </td>
+    </tr>
+        <tr>
+      <td class="test">
+                <span class="failureIndicator" title="Some tests failed.">&#x2718;</span>
+                <a href="suite3_test11_results.html" target="main">TC_05_Verify that user is able to update profile.</a>
+      </td>
+    </tr>
+      </tbody>
+  </table>
+</body>
+</html>
