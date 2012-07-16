@@ -1,4 +1,4 @@
-<project basedir="../../../../" default="hudson" name="Belford Smoke Test Execution">
+<project basedir="belford_workspace/belford_automation/" default="hudson" name="Belford Smoke Test Execution">
 	
 <path id="classpath">
     <fileset dir="jars/" includes="*.jar"/>
@@ -38,8 +38,8 @@
 <!-- hudson email report-->
 		 <target name="hudson" depends ="runTestNG">
 			<copy verbose="false" failonerror="true" todir="C:\Documents and Settings\pkaur\.jenkins\jobs\Demo\workspace">       
-	   <fileset dir="E:\belford_workspace\belford_automation\src\com\qa\Results\html" includes="suites.html"/>      
-	   	<fileset dir="E:\belford_workspace\belford_automation\src\com\qa\Results" includes="suites.html"/>    </copy>
+	   <fileset dir="\belford_workspace\belford_automation\src\com\qa\Results\html" includes="overview.html"/>      
+	   	<fileset dir="\belford_workspace\belford_automation\src\com\qa\Results" includes="overview.html"/>    </copy>
 		 </target>	
 		
  
