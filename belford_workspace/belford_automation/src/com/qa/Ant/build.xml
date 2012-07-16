@@ -1,4 +1,4 @@
-<project basedir="../../../" default="hudson" name="Belford Smoke Test Execution">
+<project basedir="../../../../" default="hudson" name="Belford Smoke Test Execution">
 	
 <path id="classpath">
     <fileset dir="jars/" includes="*.jar"/>
