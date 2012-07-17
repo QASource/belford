@@ -7,14 +7,16 @@ package com.qa.scripts.Project1;
 
 import com.thoughtworks.selenium.Selenium;
 import org.testng.annotations.*;
-import org.testng.Assert;
+//import org.testng.Assert;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import com.qa.Functions.common.CommonUtils;
-import com.qa.Functions.webdriver.UIEvents;
+//import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
 import java.net.URL;
 
 
@@ -24,72 +26,18 @@ import java.net.URL;
  *
  */
 
-public class BelLogout 	{
- 
-	public static WebDriver driver;
+public class BelLogout extends Setup 	{
 
-	
-   @BeforeTest
-//   @Parameters({"browser"})
-
-   public void getDriver()
-   {
+ //This is the test cases to ensure that the user is able to login
+   @Test(description="TC_02_Verify that user is able to logout from the application.", groups="SmokeTest")	
   
-	String URL;
+   public void test_BelLogout () throws Exception {
+
+	//Reusable to login to application
+	ReusableActions.accountLogin(driver, CommonUtils.readIni("TestData.ini", "usrname"), CommonUtils.readIni("TestData.ini", "password"));
+	//Reusable to Logout from application
+	ReusableActions.accountLogout(driver);
 	
-	URL="http://"+CommonUtils.readIni("Environment.ini", "str_SauceLabUser")+":"+CommonUtils.readIni("Environment.ini", "str_SauceLabUserKey")+"@ondemand.saucelabs.com:80/wd/hub";
-		try{
-//			if(browser.equalsIgnoreCase("Firefox"))
-//			{
-//				DesiredCapabilities capabillities = new DesiredCapabilities("firefox", "8", Platform.VISTA);
-//	            capabillities.setCapability("name",this.getClass().toString());
-//	            driver = new RemoteWebDriver(new URL(URL), capabillities);
-//	         }
-//			if(browser.equalsIgnoreCase("IE"))
-//			{
-	            DesiredCapabilities capabillities = new DesiredCapabilities("iexplore", "7", Platform.WINDOWS);
-	            capabillities.setCapability("name", this.getClass().toString());
-	            driver = new RemoteWebDriver(new URL(URL), capabillities);
-//			}	
-				Selenium selenium = new WebDriverBackedSelenium(driver, CommonUtils.readIni("Environment.ini", "URL"));
-				selenium.windowMaximize();
-			}
-
-	catch (Exception e){
-		System.out.println("Could not define the driver");
-	}	
-	
-	driver.get(CommonUtils.readIni("Environment.ini", "BelURL"));	
-}
-
-    @Test
-    public void test_BelLogout () throws Exception {
-
-	driver.get(CommonUtils.readIni("Environment.ini", "BelURL"));
-	UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
-	UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Lnk_BelLogin"));
-	UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"));
-	UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"),"pkaur@qasource.com");
-	UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belpassword"),"test123");
-	UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Btn_BelLogin"));
-	UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogout"));
-    Assert.assertEquals("Dashboard | QAOnDemand", driver.getTitle());
-    UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Lnk_BelLogout"));
-    UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
     }	
-	
-    @AfterTest
-	public static void quitDriver()
-	{
-		try
-		{
-			driver.close();
-			driver.quit();
-		}
-		catch(Exception E)
-		{
-
-		}
-	}
 }
 

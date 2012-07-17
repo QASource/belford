@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import com.qa.Functions.common.CommonUtils;
 import com.qa.Functions.webdriver.UIEvents;
+import com.qa.ReusableActions.ReusableActions;
+
 import java.net.URL;
 
 
@@ -23,70 +25,19 @@ import java.net.URL;
  *
  */
 
-public class BelLogin 	{
- 
-	public static WebDriver driver;
-
+public class BelLogin extends Setup	{
+  //This is the test cases to ensure that the user is able to login
+   @Test(description="TC_01_Verify that new user is able to login to application.", groups="SmokeTest")	
 	
-   @BeforeTest
-   @Parameters({"browser"})
-
-   public void getDriver(String browser)
-   {
-  
-	String URL;
-	
-	URL="http://"+CommonUtils.readIni("Environment.ini", "str_SauceLabUser")+":"+CommonUtils.readIni("Environment.ini", "str_SauceLabUserKey")+"@ondemand.saucelabs.com:80/wd/hub";
-		try{
-			if(browser.equalsIgnoreCase("Firefox"))
-			{
-				DesiredCapabilities capabillities = new DesiredCapabilities("firefox", "4", Platform.VISTA);
-	            capabillities.setCapability("name",this.getClass().toString());
-
-	            driver = new RemoteWebDriver(new URL(URL), capabillities);
-	         }
-			if(browser.equalsIgnoreCase("IE"))
-			{
-	            DesiredCapabilities capabillities = new DesiredCapabilities("iexplore", "7", Platform.WINDOWS);
-	            capabillities.setCapability("name", this.getClass().toString());
-	            driver = new RemoteWebDriver(new URL(URL), capabillities);
-			}	
-				Selenium selenium = new WebDriverBackedSelenium(driver, CommonUtils.readIni("Environment.ini", "URL"));
-				selenium.windowMaximize();
-			}
-
-	catch (Exception e){
-		System.out.println("Could not define the driver");
-	}	
-	
-	driver.get(CommonUtils.readIni("Environment.ini", "BelURL"));	
-}
-
-    @Test
     public void test_BelLogin () throws Exception {
 
-	driver.get(CommonUtils.readIni("Environment.ini", "BelURL"));
-	UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
-	UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Lnk_BelLogin"));
-	UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"));
-	UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"),"pkaur@qasource.com");
-	UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belpassword"),"test123");
-	UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Btn_BelLogin"));
+    //Reusable action to login to application
+    ReusableActions.accountLogin(driver, CommonUtils.readIni("TestData.ini", "usrname"), CommonUtils.readIni("TestData.ini", "password"));
 		
+	//System is waiting for seconds specified
+	CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "INTERVAL")));	
+    
     }	
 	
-    @AfterTest
-	public static void quitDriver()
-	{
-		try
-		{
-			driver.close();
-			driver.quit();
-		}
-		catch(Exception E)
-		{
-
-		}
-	}
 }
 
