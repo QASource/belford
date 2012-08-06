@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="belford_automation">
+  <test verbose="2" name="com.qa.scripts.smoketestcases.BelLogin" annotations="JDK">
+    <classes>
+      <class name="com.qa.scripts.smoketestcases.BelLogin"/>
+    </classes>
+  </test>
+</suite>

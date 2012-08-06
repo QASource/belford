@@ -1,120 +1,107 @@
 ///////////////////Script Info //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Script Name:												ReusableActions
-// What the script does/TestCase Description:				This java file has the reusable actions which will be reused in the scripts
+//Script Name:												ReusableActions
+//What the script does/TestCase Description:				This java file has the reusable actions which will be reused in the scripts
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 package com.qa.ReusableActions;
 
-import java.net.URL;
-
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverBackedSelenium;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import com.qa.Functions.common.CommonUtils;
 import com.qa.Functions.webdriver.UIEvents;
-import com.thoughtworks.selenium.Selenium;
 
 public class ReusableActions {	
 	
-		 
-		public static WebDriver driver;
 
-		
-	@BeforeTest
-	//@Parameters({"browser"})
+	///////////////////accountSignup //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// This function allows new user to signup with the provided username, password and the city. 
+	// This function accepts user name, password and city as arguments and signup the user.
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void getDriver()
-	{
-	  
-		String URL;
-		
-		URL="http://"+CommonUtils.readIni("Environment.ini", "str_SauceLabUser")+":"+CommonUtils.readIni("Environment.ini", "str_SauceLabUserKey")+"@ondemand.saucelabs.com:80/wd/hub";
-			try{
-//				if(browser.equalsIgnoreCase("Firefox"))
-//				{
-//					DesiredCapabilities capabillities = new DesiredCapabilities("firefox", "4", Platform.VISTA);
-//		            capabillities.setCapability("name",this.getClass().toString());
-//		            driver = new RemoteWebDriver(new URL(URL), capabillities);
-//		         }
-//				if(browser.equalsIgnoreCase("IE"))
-//				{
-		            DesiredCapabilities capabillities = new DesiredCapabilities("iexplore", "7", Platform.WINDOWS);
-		            capabillities.setCapability("name", this.getClass().toString());
-		            driver = new RemoteWebDriver(new URL(URL), capabillities);
-//				}	
-					Selenium selenium = new WebDriverBackedSelenium(driver, CommonUtils.readIni("Environment.ini", "URL"));
-					selenium.windowMaximize();
+		public static void accountSignup(RemoteWebDriver driver, String EmailAdress, String Password, String City) throws Exception 
+			{			
+			driver.get(CommonUtils.readIni("Environment.ini", "URL"));
+			 
+				//Provide the Email address in username text box
+				if(!(EmailAdress.isEmpty()))
+						{
+					UIEvents.type(driver, CommonUtils.readIni("Repository.ini", "txt_UserName"), EmailAdress);
+						}
+						
+				//Provide the password in password text box	
+				if(!(Password.isEmpty()))
+				{
+					UIEvents.type(driver, CommonUtils.readIni("Repository.ini", "txt_Password"), Password);
 				}
+				
+				//choose the city from the drop down list
+				if(!(City.isEmpty()))
+				{
+					UIEvents.select(driver, CommonUtils.readIni("Repository.ini", "select_City"), City);
+				}
+				//click the Sign up button
+				UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_Singup"));
+						
+			}		
 
-		catch (Exception e){
-			System.out.println("Could not define the driver");
-		}	
+		///////////////////accountLogin //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// This function allows new user to signin with the provided username and password.
+		// This function accepts user name and password as arguments and signin the user.
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		
-		driver.get(CommonUtils.readIni("Environment.ini", "URL"));	
-	}
-
-	@Test
-
-
-//		Utility_Functions utilityFunction = new Utility_Functions();
-			//Function for login to admin portal
+	    public static void accountLogin(WebDriver driver, String EmailAdress, String Password) throws Exception 
+		   {
+			driver.get(CommonUtils.readIni("Environment.ini", "URL"));
 			
-			public static void adminPortalLogin(WebDriver driver,String usrName, String password, String domainName) throws Exception
-			{
-				//Global Variables File
-//				String globalVariableFile ="Global_variables.xml";
+			//System is waiting for Login link
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
+			
+			//System is clicking on Login link
+			UIEvents.click(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
+							
+			//System is waiting for username field
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"));
+			
+			//Provide the Email address in email text box
+			if(!(EmailAdress.isEmpty()))
+					{
+				UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belusername"), EmailAdress);
+					}
 				
-				
-//				driver.get("http://10.1.204.87/adminportal/login.do");
-	//
-//				driver.findElement(By.id("loginbox")).clear();
-//				driver.findElement(By.id("loginbox")).sendKeys("admin@qumu.com");
-//				driver.findElement(By.id("passwordbox")).clear();
-//				driver.findElement(By.id("passwordbox")).sendKeys("password");
-//				new select(driver.findElement(By.id("domainselect"))).selectByVisibleText("social_00");
-//				driver.findElement(By.id("loginbutton")).click();
-	//
-//				assertEquals("Log Out", driver.findElement(By.linkText("Log Out")).getText());
-				
-//				
-//				
-//				UIEvents.type(driver, CommonUtils.readIni("Repository.ini", "txt_UserName"), usrName);
-				
-				driver.get(CommonUtils.readIni("Environment.ini", "URL"));
-				UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Txt_UserName"));
-				UIEvents.type(driver,CommonUtils.readIni("Repository.ini", "Txt_UserName"), usrName);
-				UIEvents.type(driver,CommonUtils.readIni("Repository.ini", "Txt_password"), password);
-				UIEvents.select(driver,CommonUtils.readIni("Repository.ini", "Drp_domain"), "label="+domainName);
-				UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Btn_login"));
-				UIEvents.waitForChangesToReflect(3000);
-				UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Txt_LogOut"));
-//		public static void test_CVPviewerportallogin(Selenium sel) throws Exception
-//		{
-//			String globalVariableFile ="Global_variables.xml";
-//			
-//			Utility_Functions utilityFunction = new Utility_Functions();
-//			String VAR_userEmailID = utilityFunction.GetValue(globalVariableFile, "VAR_userEmailID");
-//	 		//Viewer portal login password
-//			String VAR_userPassword = utilityFunction.GetValue(globalVariableFile, "VAR_userPassword");
-//			
-//			sel.click(EnvObjectMap_Rep.Txt_ViewerUserLogin);
-//			
-//			sel.type(EnvObjectMap_Rep.Txt_ViewerUserLogin, VAR_userEmailID);
-//			
-//			sel.type(EnvObjectMap_Rep.Txt_ViewerPasswordLogin, VAR_userPassword);
-//			sel.click(EnvObjectMap_Rep.Btn_loginSVP);
-//			utilityFunction.waitForChangesToReflect();
-//		}
-			}
 		
-	}
+			//Provide the password in password text box			
+			if(!(Password.isEmpty()))
+			{
+				UIEvents.type(driver, CommonUtils.readIni("Repository.ini","Txt_Belpassword"), Password);
+			}
+			
+			//click the Sign in button
+			UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "Btn_BelLogin"));
+			
+			//System is waiting for some time
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogout"));
+			
+		   }	
+        ///////////////////accountLogout //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// This function allows new user to signin with the provided username and password.
+		// This function accepts user name and password as arguments and signin the user.
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	
-	
+		
+		public static void accountLogout(WebDriver driver) throws Exception 
+		{
+			
+			//System is waiting for Logout link
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogout"));
+			
+			//System is clicking on Logout link
+		    UIEvents.click(driver,CommonUtils.readIni("Repository.ini", "Lnk_BelLogout"));
+			
+		    //System is waiting for login link
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
+		}
+				
+}
 	
 	

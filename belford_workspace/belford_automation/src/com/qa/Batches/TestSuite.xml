@@ -3,8 +3,8 @@
     <listener class-name="org.uncommons.reportng.HTMLReporter" /> 
   </listeners> 
   <suite-files>
-  	<suite-file path="TestSuite_FF.xml" />
-  	<suite-file path="TestSuite_IE.xml" />
+  	<suite-file path="TestSuite_FF.xml" /> 
+  	<suite-file path="TestSuite_IE.xml" />   
 	</suite-files>  	
     
 </suite>

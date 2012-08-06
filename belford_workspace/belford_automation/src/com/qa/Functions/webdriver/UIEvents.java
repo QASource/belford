@@ -4,20 +4,18 @@ import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
 import com.qa.Functions.common.CommonUtils;
 
 public class UIEvents{
 	
 public static void click (WebDriver driver, String locator) throws Exception{
-		WebElement el=waitForElement(driver,locator);
-		el.click();
+		WebElement we=waitForElement(driver,locator);
+		we.click();
 		System.out.println("Clicked the Object");
 
 		try
 		{
-			el.submit();
+			we.submit();
 			System.out.println("Submitted the Object");
 		}
 		catch(Exception E)
@@ -26,36 +24,34 @@ public static void click (WebDriver driver, String locator) throws Exception{
 		}
 		try
 		{
-			el.sendKeys("\n");
+			we.sendKeys("\n");
 		}
 		catch(Exception E)
 		{
 			
 		}
 }
-		public static void click1 (WebDriver driver, String locator) throws Exception
+public static void clickElement (WebDriver driver, String locator) throws Exception
 		{
 			System.out.println("Clicking " + locator);
-			WebElement el;
-			el = waitForElement(driver,locator);
-			el.click();
+			WebElement we;
+			we = waitForElement(driver,locator);
+			we.click();
 		}
-	
 public static void doubleclick (WebDriver driver, String locator) throws Exception
 	{
 		click(driver, locator);
 		click(driver, locator);
 		
 	}
-	public static void type (WebDriver driver, String locator, String value) throws Exception {
+public static void type (WebDriver driver, String locator, String value) throws Exception {
 		System.out.println("Enter into text box " + locator + " value: " + value);
 		//System is waiting for seconds specified
-		WebElement el=waitForElement(driver,locator);
-		el.clear();
-		el.sendKeys(value);
+		WebElement we=waitForElement(driver,locator);
+		we.clear();
+		we.sendKeys(value);
 	}
-	
-	public static void select (WebDriver driver, String locator, String value) throws Exception {
+public static void select (WebDriver driver, String locator, String value) throws Exception {
 		System.out.println("Select value: " + value + " from dropdown with locator: " + locator);
 		
 		int index = locator.indexOf("=");
@@ -69,30 +65,29 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 			locator = "xpath=//select[@" + locatorType + "='" + locatorValue + "']/option[text()='" + value + "']"; 
 		}
 		
-		WebElement el = getElement(driver,locator);
+		WebElement we = getElement(driver,locator);
 		
-		if(!el.isSelected()) {
+		if(!we.isSelected()) {
 			System.out.println("Currently not selected");
-			//el.setSelected();
+			//we.setSelected();
 			try{
-			el.click();
+			we.click();
 			}
 			catch(Exception E){
-				el.click();
+				we.click();
 			}
-			//Select dropDownList = Select(el);
+			//Select dropDownList = Select(we);
 			//dropDownList.selectByValue(value); 
 		}
 	}
-	
-	public static void check_checkbox (WebDriver driver, String locator) throws Exception {
+public static void check_checkbox (WebDriver driver, String locator) throws Exception {
 		System.out.println("Check checkbox with locator: " + locator);
 		//System is waiting for seconds specified
-		WebElement el = waitForElement(driver,locator);
-		if(!(el.isSelected()))
+		WebElement we = waitForElement(driver,locator);
+		if(!(we.isSelected()))
 			{
-			el.click();	
-			//el.setSelected();
+			we.click();	
+			//we.setSelected();
 			}
 		else
 			{
@@ -100,15 +95,14 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 			}
 
 	}
-	
-	public static void uncheck_checkbox (WebDriver driver, String locator) throws Exception {
+public static void uncheck_checkbox (WebDriver driver, String locator) throws Exception {
 		System.out.println("unCheck checkbox with locator: " + locator);
 		//System is waiting for seconds specified
-		WebElement el = waitForElement(driver,locator);
-		if((el.isSelected()))
+		WebElement we = waitForElement(driver,locator);
+		if((we.isSelected()))
 			{
 				
-				el.click();
+				we.click();
 				System.out.println("unChecked the checkbox with locator: " + locator);
 			}
 		else
@@ -117,22 +111,22 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 			}
 
 	}
-	public static WebElement waitForElement (WebDriver driver, String locator) throws Exception{
+public static WebElement waitForElement (WebDriver driver, String locator) throws Exception{
 		
 		int count = 1;
 		int timeout = CommonUtils.toInt(CommonUtils.readIni("Environment.ini","TIMEOUT"));
 		int interval= CommonUtils.toInt(CommonUtils.readIni("Environment.ini","INTERVAL"));
-		WebElement el = null;
+		WebElement we = null;
 		boolean elementFound = false;
 		while(count < timeout) 
 		{
-			el = isElementPresent(driver,locator);
+			we = isElementPresent(driver,locator);
 			
-			if(el!=null)
+			if(we!=null)
 			{
 				System.out.println("Element is found");
 				elementFound=true;
-				//el.click();
+				//we.click();
 				break;
 			}
 				//waitForChangesToReflect(interval);
@@ -145,24 +139,24 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		if(!elementFound){
 			throw new NoSuchElementException("Element with locator " + locator + " not found");
 		}
-		return el;
+		return we;
 	}
-	public static WebElement getElement(WebDriver driver, String locator) {
+public static WebElement getElement(WebDriver driver, String locator) {
 		
 		int index = locator.indexOf("=");
 		String locatorType = locator.substring(0, index);
 		String locatorValue = locator.substring((index + 1));
-		WebElement el = null;
+		WebElement we = null;
 		
 		if(locatorType.equalsIgnoreCase("link"))
 		{
 			try
 			{
-				el= driver.findElement(By.linkText(locatorValue));
+				we= driver.findElement(By.linkText(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 			
 		}
@@ -170,11 +164,11 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		{
 			try
 			{
-				el= driver.findElement(By.className(locatorValue));
+				we= driver.findElement(By.className(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 			
 		}
@@ -182,11 +176,11 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		{
 			try
 			{
-				el= driver.findElement(By.tagName(locatorValue));
+				we= driver.findElement(By.tagName(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 			
 		}
@@ -194,11 +188,11 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		{
 			try
 			{
-				el= driver.findElement(By.xpath(locatorValue));
+				we= driver.findElement(By.xpath(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 			
 		}
@@ -206,11 +200,11 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		{
 			try
 			{
-				el= driver.findElement(By.name(locatorValue));
+				we= driver.findElement(By.name(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 			
 		}
@@ -218,17 +212,17 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		{
 			try
 			{
-			el= driver.findElement(By.id(locatorValue));
+			we= driver.findElement(By.id(locatorValue));
 			}
 			catch (Exception e)
 			{
-				el=null;
+				we=null;
 			}
 		}
-		return el;
+		return we;
 		
 	}
-	public static WebElement isElementPresent (WebDriver driver, String locator) throws Exception {
+public static WebElement isElementPresent (WebDriver driver, String locator) throws Exception {
 		
 		if(!validateLocator(driver, locator)){
 			System.out.println("Invalid format for the locator. Format: locatorType=argument");
@@ -236,7 +230,7 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 		
 		return getElement(driver, locator);
 	}
-	public static boolean validateLocator(WebDriver driver, String locator) throws Exception{
+public static boolean validateLocator(WebDriver driver, String locator) throws Exception{
 		int index = locator.indexOf("=");
 		if(index > 0){
 			return true;
@@ -244,12 +238,6 @@ public static void doubleclick (WebDriver driver, String locator) throws Excepti
 			throw new Exception("Illegal format for the locator");
 		}
 	}
-	public static void waitForChangesToReflect(int timeInSeconds){
-		try {
-			Thread.sleep((timeInSeconds * 1000));
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+	
 }
 
