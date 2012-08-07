@@ -31,12 +31,13 @@ public class BelLogin extends Setup	{
 		ReusableActions.accountLogin(driver, CommonUtils.readIni("TestData.ini", "usrname"), CommonUtils.readIni("TestData.ini", "password"));
 		//Update the pass result in TCMS
 		CommonUtils.tcmsReport("TC-378", "p");
-    }
-    catch(Exception E)
+    }catch(Exception E)
     {
     //Update the fail result in TCMS
     CommonUtils.tcmsReport("TC-378", "f");
+    }finally{
+        //Update the fail result in TCMS
+        CommonUtils.tcmsReport("TC-375", "f");
     }
-  }
 }
-
+}

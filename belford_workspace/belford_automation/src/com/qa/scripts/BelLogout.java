@@ -40,6 +40,9 @@ public class BelLogout extends Setup {
     {
     //Update the fail result in TCMS
     CommonUtils.tcmsReport("TC-375", "f");
+    }finally{
+    //Update the fail result in TCMS
+     CommonUtils.tcmsReport("TC-375", "f");
     }	
   }
 
