@@ -7,7 +7,7 @@
     <test name="TC-378_Ensure that buyer is successfully able to log in to application and navigated to “Dashboard” page” page" preserve-order="true">
     <parameter name="browser" value="Firefox" />
      <classes>
-	     <class name="com.qa.scripts.smoketestcases.BelLogin">
+	     <class name="com.qa.scripts.BelLogin">
 	       <methods>
 			<include name="test_BelLogin"/>
 	       </methods>
@@ -17,7 +17,7 @@
  	<test name="TC-375_Ensure that User is successfully able to logout." preserve-order="true">
       <parameter name="browser" value="Firefox" />
      <classes>
-	     <class name="com.qa.scripts.smoketestcases.BelLogout">
+	     <class name="com.qa.scripts.BelLogout">
 	       <methods>
 			<include name="test_BelLogout"/>
 	       </methods>
@@ -27,7 +27,7 @@
   	<test name="TC-375_Ensure that User is successfully able to logout." preserve-order="true">
       <parameter name="browser" value="IE" />
      <classes>
-	     <class name="com.qa.scripts.smoketestcases.BelLogout">
+	     <class name="com.qa.scripts.BelLogout">
 	       <methods>
 			<include name="test_BelLogout"/>
 	       </methods>
