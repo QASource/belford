@@ -1,46 +1,35 @@
 <project basedir="../../../../" default="runTestNG" name="Belford Smoke Test Execution">
 	
-<path id="classpath">
+  <path id="classpath">
     <fileset dir="jars/" includes="*.jar"/>
 	<fileset dir="src/com/qa/Functions" includes="*.java"/>
   	<fileset dir="src/com/qa/Functions/common" includes="*.java"/>
 	<fileset dir="src/com/qa/Config" includes="*.ini"/>
-</path>
+  </path>
 
-  <!-- Define <testng> task -->
-  <taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="classpath"/>
+   <!-- Define <testng> task -->
+   <taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="classpath"/>
  
   <!-- Directory name where the TestNG report will be saved. -->
   <property name="testng.output.dir" value="src/com/qa/Results"/>
  
   <!-- Directory path of compiled classes(i.e *.class) -->
   <path id="classes">
-    	<pathelement location="bin"/>
-    	<fileset dir="jars/" includes="*.jar"/>
-	<fileset dir="src/com/qa/Functions" includes="*.java"/>
-  	<fileset dir="src/com/qa/Functions/common" includes="*.java"/>
-	<fileset dir="src/com/qa/Config" includes="*.ini"/>
+    <pathelement location="bin"/>
+      <fileset dir="jars/" includes="*.jar"/>
+	  <fileset dir="src/com/qa/Functions/webdriver" includes="*.java"/>
+  	  <fileset dir="src/com/qa/Functions/common" includes="*.java"/>
+	  <fileset dir="src/com/qa/Config" includes="*.ini"/>
   </path>
+	
+  <!-- Target to run TestNG. It will run all the test cases defined in the xml suite.  -->
 
-	
-	
-  <!--
-  Target to run TestNG. It will run all the test cases defined in the xml suite.
-  -->
   <target name="runTestNG">
-    <testng outputdir="${testng.output.dir}" classpathref="classes" useDefaultListeners="false" workingDir= "${basedir}"> 
-    	<sysproperty key="org.uncommons.reportng.title" value="Belford Smoke Test Execution Report"/>		
+    <testng outputdir="${testng.output.dir}" classpathref="classes" useDefaultListeners="false" workingDir="${basedir}"> 
+      <sysproperty key="org.uncommons.reportng.title" value="Belford Smoke Test Execution Report"/>		
       <xmlfileset dir="src/com/qa/Batches" includes="TestSuite.xml"/> 
      </testng>
- 
-  </target>
+ </target>
 	
-<!-- hudson email report
-		 <target name="hudson" depends ="runTestNG">
-			<copy verbose="false" failonerror="true" todir="C:\Documents and Settings\pkaur\.jenkins\jobs\Demo\workspace">       
-	   <fileset dir="\belford_workspace\belford_automation\src\com\qa\Results\html" includes="overview.html"/>      
-	   	<fileset dir="\belford_workspace\belford_automation\src\com\qa\Results" includes="overview.html"/>    </copy>
-		 </target>-->	
-		
  
 </project>
