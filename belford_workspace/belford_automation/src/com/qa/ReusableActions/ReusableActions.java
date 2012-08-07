@@ -7,14 +7,11 @@ package com.qa.ReusableActions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import com.qa.Functions.common.CommonUtils;
 import com.qa.Functions.webdriver.UIEvents;
 
-
 public class ReusableActions {	
 	
-
 
 	///////////////////accountSignup //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// This function allows new user to signup with the provided username, password and the city. 
@@ -31,7 +28,6 @@ public class ReusableActions {
 					UIEvents.type(driver, CommonUtils.readIni("Repository.ini", "txt_UserName"), EmailAdress);
 						}
 						
-				
 				//Provide the password in password text box	
 				if(!(Password.isEmpty()))
 				{
@@ -43,22 +39,19 @@ public class ReusableActions {
 				{
 					UIEvents.select(driver, CommonUtils.readIni("Repository.ini", "select_City"), City);
 				}
-				
-				//driver.findElementByXPath("//input[@value='Sign Up!']").click();
 				//click the Sign up button
 				UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "btn_Singup"));
-				
 						
 			}		
 
-		///////////////////accountSignin //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////accountLogin //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// This function allows new user to signin with the provided username and password.
 		// This function accepts user name and password as arguments and signin the user.
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		
-		public static void accountLogin(WebDriver driver, String EmailAdress, String Password) throws Exception 
-		{
+	    public static void accountLogin(WebDriver driver, String EmailAdress, String Password) throws Exception 
+		   {
 			driver.get(CommonUtils.readIni("Environment.ini", "URL"));
 			
 			//System is waiting for Login link
@@ -87,10 +80,14 @@ public class ReusableActions {
 			UIEvents.click(driver, CommonUtils.readIni("Repository.ini", "Btn_BelLogin"));
 			
 			//System is waiting for some time
-			CommonUtils.waitForChangesToReflect(CommonUtils.toInt(CommonUtils.readIni("Environment.ini", "INTERVAL")));
-			Assert.assertEquals("Dashboard | QAOnDemand", driver.getTitle());
-		}	
-	
+			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogout"));
+			
+		   }	
+        ///////////////////accountLogout //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// This function allows new user to signin with the provided username and password.
+		// This function accepts user name and password as arguments and signin the user.
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		
 		public static void accountLogout(WebDriver driver) throws Exception 
 		{
@@ -103,10 +100,7 @@ public class ReusableActions {
 			
 		    //System is waiting for login link
 			UIEvents.waitForElement(driver, CommonUtils.readIni("Repository.ini","Lnk_BelLogin"));
-				}
-			
-			
-			
+		}
 				
 }
 	
