@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Belford Smoke Test Execution Report - TC_02_Verify that buyer is successfully able to logout from QAonDemand</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>TC_02_Verify that buyer is successfully able to logout from QAonDemand</h1>
+<p>
+  Test duration: 21.003s
+</p>
+
+  <table class="resultsTable configTable">
+    <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
+              <tr class="group">
+        <td colspan="3">com.qa.scripts.smoketestcases.BelLogout</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  quitDriver
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalStateException: Invalid use of SingleClientConnManager: connection still allocated.<br/>
+Make sure to release the connection before allocating another one.</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.apache.http.impl.conn.SingleClientConnManager.getConnection(SingleClientConnManager.java:199)<br />
+              org.apache.http.impl.conn.SingleClientConnManager$1.getConnection(SingleClientConnManager.java:173)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:390)<br />
+              org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:641)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:246)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:390)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:414)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:280)<br />
+              com.qa.scripts.smoketestcases.Setup.quitDriver(Setup.java:71)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)<br />
+              java.lang.reflect.Method.invoke(Method.java:597)<br />
+              org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:641)<br />
+              org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:526)<br />
+              org.testng.internal.Invoker.invokeConfigurations(Invoker.java:196)<br />
+              org.testng.internal.Invoker.invokeConfigurations(Invoker.java:126)<br />
+              org.testng.TestRunner.afterRun(TestRunner.java:1117)<br />
+              org.testng.TestRunner.run(TestRunner.java:600)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:315)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:33)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:349)<br />
+              org.testng.internal.thread.ThreadUtil$CountDownLatchedRunnable.run(ThreadUtil.java:147)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)<br />
+              java.lang.Thread.run(Thread.java:662)<br />
+                </div>
+      </td>
+</tr>
+    
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.qa.scripts.smoketestcases.BelLogout</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  <span class="description" title="TC_02_Verify that user is able to logout from the application.">test_BelLogout</span>
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.IllegalStateException: Invalid use of SingleClientConnManager: connection still allocated.<br/>
+Make sure to release the connection before allocating another one.</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              org.apache.http.impl.conn.SingleClientConnManager.getConnection(SingleClientConnManager.java:199)<br />
+              org.apache.http.impl.conn.SingleClientConnManager$1.getConnection(SingleClientConnManager.java:173)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:390)<br />
+              org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:641)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:246)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:390)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:167)<br />
+              com.qa.ReusableActions.ReusableActions.accountLogin(ReusableActions.java:56)<br />
+              com.qa.scripts.smoketestcases.BelLogout.test_BelLogout(BelLogout.java:32)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)<br />
+              java.lang.reflect.Method.invoke(Method.java:597)<br />
+              org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:641)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:677)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:850)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1154)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:137)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:121)<br />
+              org.testng.TestRunner.runWorkers(TestRunner.java:1108)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:737)<br />
+              org.testng.TestRunner.run(TestRunner.java:596)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:315)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:33)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:349)<br />
+              org.testng.internal.thread.ThreadUtil$CountDownLatchedRunnable.run(ThreadUtil.java:147)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)<br />
+              java.lang.Thread.run(Thread.java:662)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  
+</body>
+</html>
